@@ -74,7 +74,6 @@ class DashboardActivity : AppCompatActivity() {
         }
 
         viewModel.dashboardData.observe(this) { entities ->
-            Log.d("DashboardActivitys", "Received ${entities.size} entities")
             adapter.updateEntities(entities)
         }
     }

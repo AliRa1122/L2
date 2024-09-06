@@ -11,9 +11,9 @@ object APIService {
 
     // Create an OkHttpClient with custom timeouts
     private val client = OkHttpClient.Builder()
-        .connectTimeout(30, TimeUnit.SECONDS)  // Set connection timeout
-        .readTimeout(30, TimeUnit.SECONDS)     // Set read timeout
-        .writeTimeout(30, TimeUnit.SECONDS)    // Set write timeout
+        .connectTimeout(30, TimeUnit.SECONDS)  // Setting connection timeout
+        .readTimeout(30, TimeUnit.SECONDS)     // Setting read timeout
+        .writeTimeout(30, TimeUnit.SECONDS)    // Setting write timeout
         .build()
 
     // Retrofit instance
