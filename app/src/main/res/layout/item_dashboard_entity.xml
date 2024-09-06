@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/speciesTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:textColor="@color/primary_text_color"
+            android:text="Species Name" />
+
+        <TextView
+            android:id="@+id/scientificNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceSubtitle1"
+            android:textStyle="italic"
+            android:textColor="@color/secondary_text_color"
+            android:text="Scientific Name" />
+
+        <TextView
+            android:id="@+id/habitatTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:textColor="@color/secondary_text_color"
+            android:text="Habitat: ..." />
+
+        <TextView
+            android:id="@+id/dietTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:textColor="@color/secondary_text_color"
+            android:text="Diet: ..." />
+
+        <TextView
+            android:id="@+id/conservationStatusTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:textStyle="bold"
+            android:textColor="@color/conservation_status_color"
+            android:text="Status: ..." />
+
+        <TextView
+            android:id="@+id/averageLifespanTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:textColor="@color/secondary_text_color"
+            android:text="Avg. Lifespan: ..." />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

@@ -12,4 +12,11 @@
     <color name="pink">#FD00D3</color>
     <color name="gray">#AEABAB</color>
 
+    <color name="primary_color">#4CAF50</color>
+    <color name="primary_dark_color">#388E3C</color>
+    <color name="accent_color">#FFC107</color>
+    <color name="background_color">#F5F5F5</color>
+    <color name="primary_text_color">#212121</color>
+    <color name="secondary_text_color">#757575</color>
+    <color name="conservation_status_color">#D32F2F</color>
 </resources>

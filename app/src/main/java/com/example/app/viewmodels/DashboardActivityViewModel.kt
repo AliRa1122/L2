@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.app.models.Entity
 import com.example.app.repositories.DashboardRepository
 import com.example.app.utils.DashboardResponse
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class DashboardViewModel(private val repository: DashboardRepository) : ViewModel() {
