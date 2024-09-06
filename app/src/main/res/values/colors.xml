@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <!-- Custom Colors -->
+    <color name="lightBlue">#29AFD2</color>
+    <color name="lightPurple">#2A2A7A</color>
+
+    <color name="light_gray">#B3AEB2</color>
+    <color name="sky_blue">#00BFFF</color>
+    <color name="navy_blue">#000080</color>
+    <color name="pink">#FD00D3</color>
+    <color name="gray">#AEABAB</color>
+
+</resources>
