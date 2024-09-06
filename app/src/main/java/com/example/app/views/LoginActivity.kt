@@ -147,10 +147,10 @@ class LoginActivity : AppCompatActivity() {
     // Navigate to Dashboard Activity
     private fun navigateToDashboardActivity(keypass: String) {
         Toast.makeText(this, "KeyPass: $keypass", Toast.LENGTH_SHORT).show()
-/*        val intent = Intent(this, DashboardActivity::class.java)
+        val intent = Intent(this, DashboardActivity::class.java)
         intent.putExtra("KEYPASS", keypass)
         startActivity(intent)
-        finish()*/
+        finish()
     }
 
     // Hide Keyboard
