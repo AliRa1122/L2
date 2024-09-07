@@ -2,8 +2,8 @@ package com.example.app
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
+import com.example.app.data.response.DashboardResponse
 import com.example.app.models.Entity
-import com.example.app.utils.DashboardResponse
 import com.example.app.repositories.DashboardRepository
 import com.example.app.viewmodels.DashboardViewModel
 import kotlinx.coroutines.Dispatchers
@@ -114,7 +114,9 @@ class DashboardViewModelTest {
     fun `fetchDashboard should set loading state correctly`() = runBlockingTest {
         // Given
         val keypass = "animals"
-        `when`(dashboardRepository.getDashboard(keypass)).thenReturn(flowOf(Result.success(DashboardResponse(emptyList(), 0)))) // Mock successful fetch response with empty data
+        `when`(dashboardRepository.getDashboard(keypass)).thenReturn(flowOf(Result.success(
+            DashboardResponse(emptyList(), 0)
+        ))) // Mock successful fetch response with empty data
 
         // When
         viewModel.fetchDashboard(keypass) // Trigger data fetch
