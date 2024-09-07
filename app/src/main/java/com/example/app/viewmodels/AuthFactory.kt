@@ -15,7 +15,7 @@ class AuthFactory (
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         // If the model class is LoginActivityViewModel, return a new instance of LoginActivityViewModel
         if (modelClass.isAssignableFrom(LoginActivityViewModel::class.java)) {
-            return LoginActivityViewModel(repository, application) as T
+            return LoginActivityViewModel(repository) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

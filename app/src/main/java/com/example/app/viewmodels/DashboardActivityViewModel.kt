@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.app.models.Entity
 import com.example.app.repositories.DashboardRepository
-import com.example.app.utils.DashboardResponse
 import kotlinx.coroutines.launch
 
 // ViewModel class responsible for managing UI-related data in a lifecycle-conscious way

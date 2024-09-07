@@ -1,6 +1,5 @@
 package com.example.app.viewmodels
 
-import android.app.Application
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -10,7 +9,6 @@ import kotlinx.coroutines.launch
 class LoginActivityViewModel(
     // The ViewModel receives the repository and application as parameters
     private val repository: AuthRepository,
-    private val application: Application
 ) : ViewModel() {
     // The isLoading variable is a MutableLiveData that stores a boolean value
     private var isLoading: MutableLiveData<Boolean> = MutableLiveData(false)

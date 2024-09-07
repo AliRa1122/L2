@@ -1,6 +1,7 @@
 package com.example.app.views
 
 import android.annotation.SuppressLint
+import android.os.Build
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -26,7 +27,12 @@ class DetailsActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        val entity = intent.getParcelableExtra<Entity>("ENTITY")
+        val entity = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            intent.getParcelableExtra("ENTITY", Entity::class.java)
+        } else {
+            @Suppress("DEPRECATION")
+            intent.getParcelableExtra("ENTITY") as? Entity
+        }
         entity?.let { displayEntityDetails(it) }
 
     }
@@ -45,7 +51,6 @@ class DetailsActivity : AppCompatActivity() {
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        onBackPressed()
         return true
     }
 }
