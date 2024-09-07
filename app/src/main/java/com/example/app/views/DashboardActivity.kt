@@ -81,5 +81,6 @@ class DashboardActivity : AppCompatActivity() {
     private fun navigateToDetailsScreen(entity: Entity) {
         // TODO: Implement navigation to Details screen
         Toast.makeText(this, "Clicked on: ${entity.species}", Toast.LENGTH_SHORT).show()
+
     }
 }

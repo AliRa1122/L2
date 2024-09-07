@@ -1,28 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    app:cardCornerRadius="8dp"
-    app:cardElevation="4dp">
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:id="@+id/main"
+    android:background="@color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@color/white"
-        android:padding="16dp">
+        android:orientation="vertical">
 
+        <!-- Species Name -->
         <TextView
             android:id="@+id/speciesTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:textAppearance="?attr/textAppearanceHeadline5"
             android:textColor="@color/primary_text_color"
             android:text="Species Name" />
 
+        <!-- Scientific Name -->
         <TextView
             android:id="@+id/scientificNameTextView"
             android:layout_width="wrap_content"
@@ -30,42 +28,57 @@
             android:textAppearance="?attr/textAppearanceSubtitle1"
             android:textStyle="italic"
             android:textColor="@color/secondary_text_color"
+            android:layout_marginTop="4dp"
             android:text="Scientific Name" />
 
+        <!-- Habitat -->
         <TextView
             android:id="@+id/habitatTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:textAppearance="?attr/textAppearanceBody2"
+            android:layout_marginTop="8dp"
             android:textColor="@color/secondary_text_color"
-            android:text="Habitat: ..." />
+            android:text="Habitat: Placeholder" />
 
+        <!-- Diet -->
         <TextView
             android:id="@+id/dietTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?attr/textAppearanceBody2"
             android:textColor="@color/secondary_text_color"
-            android:text="Diet: ..." />
+            android:text="Diet: Placeholder" />
 
+        <!-- Conservation Status -->
         <TextView
             android:id="@+id/conservationStatusTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:textAppearance="?attr/textAppearanceBody2"
             android:textStyle="bold"
-            android:textColor="@color/lightPurple"
-            android:text="Status: ..." />
+            android:textColor="@color/conservation_status_color"
+            android:text="Conservation Status: Placeholder" />
 
+        <!-- Average Lifespan -->
         <TextView
             android:id="@+id/averageLifespanTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?attr/textAppearanceBody2"
+            android:layout_marginTop="8dp"
             android:textColor="@color/secondary_text_color"
-            android:text="Avg. Lifespan: ..." />
+            android:text="Avg. Lifespan: Placeholder years" />
 
+        <!-- Description -->
+        <TextView
+            android:id="@+id/descriptionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textAppearance="?attr/textAppearanceBody1"
+            android:textColor="@color/primary_text_color"
+            android:text="Description: Placeholder" />
     </LinearLayout>
-
-</com.google.android.material.card.MaterialCardView>
+</ScrollView>
