@@ -1,5 +1,6 @@
 package com.example.app.views
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -79,8 +80,9 @@ class DashboardActivity : AppCompatActivity() {
     }
 
     private fun navigateToDetailsScreen(entity: Entity) {
-        // TODO: Implement navigation to Details screen
         Toast.makeText(this, "Clicked on: ${entity.species}", Toast.LENGTH_SHORT).show()
-
+        val intent = Intent(this, DetailsActivity::class.java)
+        intent.putExtra("ENTITY", entity)
+        startActivity(intent)
     }
 }
