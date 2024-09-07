@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -17,11 +18,15 @@ import com.example.app.repositories.DashboardRepository
 import com.example.app.utils.APIService
 import com.example.app.viewmodels.DashboardViewModel
 import com.example.app.viewmodels.DashboardViewModelFactory
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DashboardActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDashboardBinding
-    private lateinit var viewModel: DashboardViewModel
     private lateinit var adapter: DashboardAdapter
+    private val viewModel: DashboardViewModel by viewModels(
+        factoryProducer = { DashboardViewModelFactory(DashboardRepository(APIService.provideAPIConsumer(APIService.provideRetrofit(APIService.provideOkHttpClient())))) }
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,9 +57,6 @@ class DashboardActivity : AppCompatActivity() {
             return
         }
 
-        // Set up the ViewModel for the dashboard screen
-        setupViewModel()
-
         // Set up the RecyclerView for displaying the list of entities
         setupRecyclerView()
 
@@ -63,18 +65,6 @@ class DashboardActivity : AppCompatActivity() {
 
         // Fetch the dashboard data using the provided keypass
         viewModel.fetchDashboard(keypass)
-    }
-
-    // Method to set up the ViewModel using the ViewModelFactory
-    private fun setupViewModel() {
-        // Create a repository instance that interacts with the API
-        val repository = DashboardRepository(APIService.getService())
-
-        // Use the ViewModelFactory to create the DashboardViewModel
-        val factory = DashboardViewModelFactory(repository)
-
-        // Initialize the ViewModel
-        viewModel = ViewModelProvider(this, factory)[DashboardViewModel::class.java]
     }
 
     // Method to set up the RecyclerView with an adapter and layout manager

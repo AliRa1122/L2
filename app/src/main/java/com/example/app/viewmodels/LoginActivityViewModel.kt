@@ -4,11 +4,14 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.app.repositories.AuthRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class LoginActivityViewModel(
-    // The ViewModel receives the repository and application as parameters
-    private val repository: AuthRepository,
+// ViewModel class responsible for managing UI-related data in a lifecycle-conscious way
+@HiltViewModel
+class LoginActivityViewModel @Inject constructor(
+    private val repository: AuthRepository
 ) : ViewModel() {
     // The isLoading variable is a MutableLiveData that stores a boolean value
     private var isLoading: MutableLiveData<Boolean> = MutableLiveData(false)

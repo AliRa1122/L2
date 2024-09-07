@@ -6,11 +6,15 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.app.models.Entity
 import com.example.app.repositories.DashboardRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 // ViewModel class responsible for managing UI-related data in a lifecycle-conscious way
-class DashboardViewModel(private val repository: DashboardRepository) : ViewModel() {
-
+@HiltViewModel
+class DashboardViewModel @Inject constructor(
+    private val repository: DashboardRepository
+) : ViewModel() {
     // LiveData to hold loading state, observing this will allow the UI to show/hide loading indicators
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading

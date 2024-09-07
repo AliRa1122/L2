@@ -4,8 +4,9 @@ import com.example.app.utils.APIConsumer
 import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException
 import java.io.IOException
+import javax.inject.Inject
 
-class DashboardRepository(private val consumer: APIConsumer) {
+class DashboardRepository @Inject constructor(private val consumer: APIConsumer) {
     // Get the dashboard data and emit the result as a flow
     suspend fun getDashboard(keypass: String) = flow {
         try {

@@ -9,22 +9,26 @@ import android.text.InputType
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
-import androidx.lifecycle.ViewModelProvider
 import com.example.app.R
 import com.example.app.databinding.ActivityLoginBinding
 import com.example.app.repositories.AuthRepository
 import com.example.app.utils.APIService
 import com.example.app.viewmodels.AuthFactory
 import com.example.app.viewmodels.LoginActivityViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
-    private lateinit var viewModel: LoginActivityViewModel
+    private val viewModel: LoginActivityViewModel by viewModels(
+        factoryProducer = { AuthFactory(AuthRepository(APIService.provideAPIConsumer(APIService.provideRetrofit(APIService.provideOkHttpClient())))) }
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,12 +46,6 @@ class LoginActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-        // Initialize the ViewModel with the factory pattern
-        viewModel = ViewModelProvider(
-            this,
-            AuthFactory(AuthRepository(APIService.getService()), application)
-        )[LoginActivityViewModel::class.java]
 
         // Set up observers for LiveData
         setupObservers()

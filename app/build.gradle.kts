@@ -69,4 +69,6 @@ dependencies {
     testImplementation (libs.mockito.core)
     testImplementation (libs.mockito.inline)
 
+    // Hilt
+    implementation(libs.hilt.android)
 }

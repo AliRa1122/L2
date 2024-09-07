@@ -5,8 +5,9 @@ import com.example.app.utils.LoginRequest
 import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException
 import java.io.IOException
+import javax.inject.Inject
 
-class AuthRepository(private val consumer: APIConsumer) {
+class AuthRepository @Inject constructor(private val consumer: APIConsumer) {
     // Login user and emit the result as a flow
     suspend fun loginUser(username: String, password: String) = flow {
         try {
