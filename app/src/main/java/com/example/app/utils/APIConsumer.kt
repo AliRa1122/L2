@@ -1,5 +1,8 @@
 package com.example.app.utils
 
+import com.example.app.data.request.LoginRequest
+import com.example.app.data.response.DashboardResponse
+import com.example.app.data.response.LoginResponse
 import com.example.app.models.Entity
 import retrofit2.Response
 import retrofit2.http.Body
@@ -17,20 +20,3 @@ interface APIConsumer {
     @GET("dashboard/{keypass}")
     suspend fun getDashboard(@Path("keypass") keypass: String): Response<DashboardResponse>
 }
-
-// Data classes for API requests and responses
-data class LoginRequest(
-    val username: String,
-    val password: String
-)
-
-// Data classes for API requests and responses
-data class LoginResponse(
-    val keypass: String
-)
-
-// Data classes for API requests and responses
-data class DashboardResponse(
-    val entities: List<Entity>,
-    val entityTotal: Int
-)

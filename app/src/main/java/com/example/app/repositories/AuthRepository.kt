@@ -1,7 +1,7 @@
 package com.example.app.repositories
 
+import com.example.app.data.request.LoginRequest
 import com.example.app.utils.APIConsumer
-import com.example.app.utils.LoginRequest
 import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException
 import java.io.IOException
