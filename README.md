@@ -22,7 +22,7 @@ Before you begin, ensure you have met the following requirements:
 
 To get a local copy up and running, follow these simple steps:
 
-    1. Clone the repository: 
+    1. Clone the repository:
 
 ```
             git clone https://github.com/yourusername/wildlife-explorer.git
@@ -31,7 +31,6 @@ To get a local copy up and running, follow these simple steps:
     2. Open Android Studio and select "Open an Existing Project".
     3. Navigate to the cloned repository and select it.
     4. Wait for Android Studio to finish syncing and indexing the project.
-
 
 **Building the App**
 
@@ -75,10 +74,11 @@ If you need to change the API endpoint or other configuration parameters:
 
 Contributions to the Wildlife Explorer app are welcome. Please feel free to submit a Pull Request.
 
-
 **Contact**
 
 If you have any questions or suggestions, please open an issue on the GitHub repository.
 
 Thank you for using Wildlife Explorer!
 
+**Demo**
+![InCollage_20240907_115206714](https://github.com/user-attachments/assets/ed541a66-c5cb-4103-a3f3-c99d002015d5)
